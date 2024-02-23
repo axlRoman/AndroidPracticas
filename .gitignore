@@ -1,0 +1,4 @@
+# Ignora archivos del sistema Mac 
+.DS_store
+# ignora la carpeta de intermediates de todas las aplicaciones compiladas en android studio
+implements/
