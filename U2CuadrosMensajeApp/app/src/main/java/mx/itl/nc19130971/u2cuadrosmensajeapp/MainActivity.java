@@ -1,3 +1,25 @@
+/*------------------------------------------------------------------------------------------
+:*                         TECNOLOGICO NACIONAL DE MEXICO
+:*                                CAMPUS LA LAGUNA
+:*                     INGENIERIA EN SISTEMAS COMPUTACIONALES
+:*                             DESARROLLO EN ANDROID "A"
+:*
+:*                   SEMESTRE: ENE-JUN/2024    HORA: 08-09 HRS
+:*
+                  Activity que despliega la bandera de mexico
+:*
+:*  Autor       : Francisco Axel Roman Cardoza     19130971
+:*  Fecha       : 20/Feb/2024
+:*  Compilador  : Android Studio Hedgehog
+:*  Descripción : Este activity despliega la bandera de Mexico y contiene
+                  botones para salir de la app y otro para pasar a un
+                  segundo activity con la bandera de Grecia
+:*  Ultima modif:
+:*  Fecha       Modificó             Motivo
+:*==========================================================================================
+:*
+:*------------------------------------------------------------------------------------------*/
+
 package mx.itl.nc19130971.u2cuadrosmensajeapp;
 
 import androidx.appcompat.app.AlertDialog;
@@ -6,6 +28,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -153,8 +176,35 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
     //----------------------------------------------------------------------------------------------
+    //Cuadro mensaje con layout incrustado
     public void btnMensajeLayoutIncrustadoClick (View v) {
+        View layout = getLayoutInflater().inflate(R.layout.login_layout, null);
+        EditText usuario = layout.findViewById(R.id.edtUsuario);
+        EditText contraseña = layout.findViewById(R.id.edtpContraseña);
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Acceso")
+                .setIcon(R.drawable.itl)
+                .setView(layout)
+                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Obtener el usuario y contraseña tecleados
+                        String usr = usuario.getText().toString();
+                        String psw = contraseña.getText().toString();
+                        mostrarToast("Usuario: "+usr + "\nContraseña: "+psw);
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+
+                    }
+                })
+                .setCancelable(false)
+                .create()
+                .show();
     }
     //----------------------------------------------------------------------------------------------
     public void btnAcercaDeClick (View v) {
