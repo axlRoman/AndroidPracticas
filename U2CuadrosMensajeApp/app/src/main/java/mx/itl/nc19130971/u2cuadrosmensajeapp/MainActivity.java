@@ -6,14 +6,14 @@
 :*
 :*                   SEMESTRE: ENE-JUN/2024    HORA: 08-09 HRS
 :*
-                  Activity que despliega la bandera de mexico
+              Activity que muestra diferentes botones con funcionalidades
 :*
 :*  Autor       : Francisco Axel Roman Cardoza     19130971
-:*  Fecha       : 20/Feb/2024
+:*  Fecha       : 28/Feb/2024
 :*  Compilador  : Android Studio Hedgehog
-:*  Descripción : Este activity despliega la bandera de Mexico y contiene
-                  botones para salir de la app y otro para pasar a un
-                  segundo activity con la bandera de Grecia
+:*  Descripción : Este activity contiene los botoones para las funcionalidades
+                  de Toast, snackbar y los AlertDialog con sus diferentes
+                  funcionalidades
 :*  Ultima modif:
 :*  Fecha       Modificó             Motivo
 :*==========================================================================================
@@ -208,7 +208,23 @@ public class MainActivity extends AppCompatActivity {
     }
     //----------------------------------------------------------------------------------------------
     public void btnAcercaDeClick (View v) {
-
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Acerca De")
+                .setIcon(R.drawable.itl)
+                .setMessage("Tecnológico Nacional de México\n" +
+                        "Campus La Laguna\n" +
+                        "Ingeniería en Sistemas Computacionales\n" +
+                        "Alumno: Francisco Axel Roman Cardoza\n" +
+                        "Número de Control: 19130971\n" +
+                        "Fecha: 28 de febrero 2024")
+                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create()
+                .show();
     }
     //----------------------------------------------------------------------------------------------
 
