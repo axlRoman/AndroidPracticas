@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_jugar"
+        android:icon="@drawable/play"
+        android:title="Jugar" />
+    <item
+        android:id="@+id/nav_configurar_tema"
+        android:icon="@drawable/ajustes"
+        android:title="Configurar Tema"/>
+    <item
+        android:id="@+id/nav_asteroides"
+        android:icon="@drawable/espacio"
+        android:title="Asteroides" />
+    <item
+        android:id="@+id/nav_oswi_vs_android"
+        android:icon="@drawable/android"
+        android:title="OSWI vs Android" />
+
+    <item
+        android:id="@+id/nav_ver_registro"
+        android:icon="@drawable/registro"
+        android:title="Ver Registro" />
+    <item
+        android:id="@+id/nav_acerca_de"
+        android:icon="@drawable/acerca_de"
+        android:title="Acerca de" />
+    <item
+        android:id="@+id/nav_salir"
+        android:icon="@drawable/salida"
+        android:title="Salir" />
+</menu>
